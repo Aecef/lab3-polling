@@ -6,7 +6,12 @@ import "react-datepicker/dist/react-datepicker.css";
 function Calendar() {
   const [startDate, setStartDate] = useState(new Date());
   return (
-    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+    <DatePicker
+      minDate={new Date()}
+      showTimeSelect 
+      selected={startDate} 
+      onChange={(date) => setStartDate(date)} 
+    />
   );
 };
 
