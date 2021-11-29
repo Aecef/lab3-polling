@@ -1,16 +1,17 @@
-import * as React from "react"
+import React , { useState } from 'react'
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const SecondPage = () => (
-  <Layout>
-    <Seo title="Page two" />
-    <h1>Hi from the second page. Alec Just tested a change here</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
+import Calendar from "../components/calendar"
+
+
+
+const SecondPage= () => (
+    <Layout>
+      <Calendar />
+    </Layout>
 )
 
 export default SecondPage
