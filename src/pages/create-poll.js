@@ -7,6 +7,11 @@ import {Button, InputGroup, FormControl, Container, Row, Col, Form, Input, FormG
 import CalendarAdmin from "../components/calendar-admin"
 
 
+const StartTime = new Date();
+const EndTime = new Date();
+EndTime.setHours(StartTime.getHours() + 3);
+
+
 const CreatePoll = () => (
   <Layout>
     <Seo title="Poll Page"/>
@@ -34,9 +39,29 @@ const CreatePoll = () => (
                 <Button type = "submit">Create Poll</Button>
             </Row>
         </Form>
+
+        <div id = 'dayTable'></div>
     </Container>
+
+    <h2>{StartTime.toString()}</h2>
+    <h2>{EndTime.toString()}</h2>
+
   </Layout>
   
 )
 
 export default CreatePoll
+
+function CreateTable(blocks){ 
+    const BlockSize = (EndTime.getTime() - StartTime.getTime()) / blocks; 
+    const NewTime = StartTime;
+    for(let i =0; i < blocks; i++){
+        NewTime.setTime(NewTime.getTime() + (BlockSize * i));
+        document.getElementById('dayTable').innerHTML += "<h6>{NewTime.toString()}</h6>";
+        
+    }
+}
+
+window.addEventListener('load', (event) => {
+    CreateTable(8);
+});
