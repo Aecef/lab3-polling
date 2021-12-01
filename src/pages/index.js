@@ -55,6 +55,9 @@ const IndexPage = () => {
     <button className="button" type="button" onClick={login}>Login</button>
     <p className="foot">No Account? <Link to="/sign-up/">Create Account</Link>.</p>
   </form>
+
+  <Link to="/create-poll/">Create A Poll</Link> <br />
+
 </Layout>
 }
 
