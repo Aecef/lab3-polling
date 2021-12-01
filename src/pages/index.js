@@ -1,32 +1,64 @@
-import * as React from "react"
+import React, {useState} from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { navigate } from '@reach/router'
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/create-poll/">Create A Poll</Link> <br />
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
-    </p>
-  </Layout>
-)
+const IndexPage = () => {
+
+  const [UserName,setUserName] = useState('')
+  const [Password,setPassword] = useState('')
+  const [error,setError] = useState()
+
+  const login = () => {
+    let userInfoData = JSON.parse(window.localStorage.getItem('UserInfo'))
+    const userInfo = userInfoData.userInfo.filter(res => {
+      return res.UserName == UserName
+    })
+    if(userInfo.length > 0) {
+      if(userInfo[0].Password == Password) {
+        window.localStorage.setItem('MyInfo',JSON.stringify(userInfo))
+        window.location = '/home'
+      } else {
+        setError('error')
+      }
+    } else {
+      setError('error')
+    }
+  }
+
+  return <Layout>
+  <Seo title="Home" />
+  <form className="form">
+    <div className="title">Sign in to your account</div>
+    <div style={{color:'red'}}>{error}</div>
+    <div className="form-group">
+      <p className="p">Username</p>
+      <input
+        name="username"
+        className="form-control"
+        placeholder="Username"
+        onChange={(e) => setUserName(e.target.value)}
+      />
+    </div>
+    <div className="form-group">
+      <p className="p">Password</p>
+      <input
+        name="password"
+        className="form-control"
+        placeholder="Password"
+        onChange={(e) => setPassword(e.target.value)}
+      />
+    </div>
+    <button className="button" type="button" onClick={login}>Login</button>
+    <p className="foot">No Account? <Link to="/sign-up/">Create Account</Link>.</p>
+  </form>
+
+  <Link to="/create-poll/">Create A Poll</Link> <br />
+
+</Layout>
+}
 
 export default IndexPage

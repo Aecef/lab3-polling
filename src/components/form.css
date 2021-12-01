@@ -1,0 +1,85 @@
+.form {
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  margin: 10% auto;
+  padding: 20px 30px;
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #CCC;
+}
+
+.form .title {
+  font-weight: 800;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form .p {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.form .foot {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.form-group {
+
+}
+
+.form-control {
+  margin: 0;
+  outline: 0;
+  width: 100%;
+  -webkit-appearance: none;
+  tap-highlight-color: rgba(ZZZ255,255,255,0);
+  line-height: 1.21428571em;
+  padding: 0.578571em 0.7em;
+  font-size: 1em;
+  background: #fff;
+  border: 1px solid rgba(34,36,38,.15);
+  color: rgba(0,0,0,.87);
+  border-radius: 0.28571429rem;
+  -webkit-box-shadow: 0 0 0 0 transparent inset;
+  box-shadow: 0 0 0 0 transparent inset;
+  -webkit-transition: color .1s ease,border-color .1s ease;
+  transition: color .1s ease,border-color .1s ease;
+}
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  width: 100%;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  color: #FFF;
+  background: none rgb(101 51 153 / 85%);
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  margin: 20px 0;
+  padding: 0.68571429em 1.5em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 700;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.28571429rem;
+  -webkit-box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgb(34 36 38 / 15%) inset;
+  box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgb(34 36 38 / 15%) inset;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,background .1s ease,-webkit-box-shadow .1s ease;
+  transition: opacity .1s ease,background-color .1s ease,color .1s ease,background .1s ease,-webkit-box-shadow .1s ease;
+  transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+  transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease,-webkit-box-shadow .1s ease;
+  will-change: '';
+  -webkit-tap-highlight-color: transparent;
+}
