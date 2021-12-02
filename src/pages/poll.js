@@ -11,22 +11,26 @@ const EndTime = new Date();
 EndTime.setHours(StartTime.getHours() + 3);
 
 
-const CreatePoll = () => (
-  <Layout>
+const  CreatePoll = () => {
+
+  return <Layout>
     <Seo title="Poll Page"/>
     <Container>
-        <div id = 'dayTable'> </div>
-        <Button variant= "primary" onClick = {() => tables.createTable(6, document )}></Button>
+        <div id = 'dayTable'> is this null </div>
     </Container>
   </Layout>
   
-)
+ }
 
 export default CreatePoll
 
+window.onload = function() {
+    console.log('crap');
+    tables.createTable(6);
+}
 
 const tables = {
-    createTable: function (iblocks, doc){
+    createTable: function (iblocks){
         let data = JSON.parse(window.localStorage.getItem('pollData'));
         iblocks = data.blocks
         const EndTime = new Date();
@@ -35,9 +39,7 @@ const tables = {
         const BlockSize = (Date.parse(EndTime) - Date.parse(StartTime)) / iblocks; 
 
         const NewTime = new Date(data.startDate);
-        if(doc.getElementById('dayTable') != null){
-            doc.getElementById('dayTable').innerHTML = " ";
-        }
+
     
         console.log(NewTime);
         console.log(EndTime);
@@ -45,11 +47,12 @@ const tables = {
         let k = 0;
         for(let i =0; i < iblocks; i++){
             k = (Date.parse(NewTime) + (BlockSize * i));
-            console.log(BlockSize * i);
-            console.log(k);
-            if(doc.getElementById('dayTable') != null){
-                doc.getElementById('dayTable').innerHTML += "<h6>" + (new Date(k)) + "</h6>";
+            //console.log(BlockSize * i);
+            //console.log(k);
+            if(document.getElementById('dayTable') != null){
+                document.getElementById('dayTable').innerHTML += "<h6>" + (new Date(k)) + "</h6>";
             }
+            console.log(document.getElementById('dayTable'));
         }
     }
 }
