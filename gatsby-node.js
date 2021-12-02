@@ -1,4 +1,5 @@
-exports.createPages = async ({ actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
+  const { data } = await graphql(``)
   const { createPage } = actions
   createPage({
     path: "/using-dsg",
