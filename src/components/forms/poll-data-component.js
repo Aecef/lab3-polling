@@ -6,7 +6,6 @@ export default class PollDataComponent extends Component {
 
     constructor(props) {
         super(props);
-
         this.onChangeStartDate = this.onChangeStartDate.bind(this);
         this.onChangeEndDate = this.onChangeEndDate.bind(this);
         this.onChangeVotesPTS = this.onChangeVotesPTS.bind(this);
