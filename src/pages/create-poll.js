@@ -20,7 +20,7 @@ const CreatePoll = () => (
 
     
     <Container>
-        <PollDataComponent/>
+        <PollDataComponent />
     </Container>
 
   </Layout>
