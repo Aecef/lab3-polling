@@ -13,24 +13,21 @@ EndTime.setHours(StartTime.getHours() + 3);
 
 const  CreatePoll = () => {
 
-  return <Layout>
+   return <Layout>
     <Seo title="Poll Page"/>
     <Container>
-        <div id = 'dayTable'> is this null </div>
+        <div id = 'dayTable'> </div>
     </Container>
+    {tables.createTable(6)}
   </Layout>
   
  }
 
 export default CreatePoll
 
-window.onload = function() {
-    console.log('crap');
-    tables.createTable(6);
-}
-
 const tables = {
     createTable: function (iblocks){
+ 
         let data = JSON.parse(window.localStorage.getItem('pollData'));
         iblocks = data.blocks
         const EndTime = new Date();

@@ -12,7 +12,7 @@ const EndTime = new Date();
 EndTime.setHours(StartTime.getHours() + 3);
 
 
-const CreatePoll = () => {
+const CreatePoll = () => (
 
     
   <Layout>
@@ -27,7 +27,7 @@ const CreatePoll = () => {
 
   </Layout>
   
-}
+)
 
 export default CreatePoll
 
