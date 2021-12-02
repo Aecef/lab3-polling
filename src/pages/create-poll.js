@@ -20,9 +20,7 @@ const CreatePoll = () => (
 
     
     <Container>
-        <PollDataComponent />
-
-        <div id = 'dayTable' >  </div>
+        <PollDataComponent/>
     </Container>
 
   </Layout>

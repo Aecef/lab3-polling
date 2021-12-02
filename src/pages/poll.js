@@ -3,12 +3,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import PollDataComponent from '../components/forms/poll-data-component';
-import {Button, InputGroup, FormControl, Container, Row, Col, Form, Input, FormGroup} from 'react-bootstrap'
-
-
-const StartTime = new Date();
-const EndTime = new Date();
-EndTime.setHours(StartTime.getHours() + 3);
+import {Button, InputGroup, FormControl, Container, Row, Col, Form, Input, FormGroup,Table} from 'react-bootstrap'
 
 
 const  CreatePoll = () => {
@@ -16,11 +11,22 @@ const  CreatePoll = () => {
    return <Layout>
     <Seo title="Poll Page"/>
     <Container>
-        <div id = 'dayTable'> </div>
+        <Table striped bordered hover>
+            <thead>
+                <tr>
+                    <th>Time Slot</th>
+                    <th>Reserve</th>
+                    <th>Slots Left</th>
+                    <th>People</th>
+                </tr>
+            </thead>
+            <tbody id = 'dayTable'>
+                {tables.createTable(6)}  
+            </tbody>
+        </Table> 
     </Container>
-    {tables.createTable(6)}
   </Layout>
-  
+   
  }
 
 export default CreatePoll
@@ -47,7 +53,7 @@ const tables = {
             //console.log(BlockSize * i);
             //console.log(k);
             if(document.getElementById('dayTable') != null){
-                document.getElementById('dayTable').innerHTML += "<h6>" + (new Date(k)) + "</h6>";
+                document.getElementById('dayTable').innerHTML += "<tr>" + '<td>' + (new Date(k)) + '</td>' + "</tr>";
             }
             console.log(document.getElementById('dayTable'));
         }
