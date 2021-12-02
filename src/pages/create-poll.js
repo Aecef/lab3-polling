@@ -2,6 +2,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import PollDataComponent from '../components/forms/poll-data-component';
 import {Button, InputGroup, FormControl, Container, Row, Col, Form, Input, FormGroup} from 'react-bootstrap'
 import CalendarAdmin from "../components/calendar-admin"
 
@@ -14,6 +15,8 @@ EndTime.setHours(StartTime.getHours() + 3);
 const CreatePoll = () => (
   <Layout>
     <Seo title="Poll Page"/>
+
+    <PollDataComponent />
     <Container>
         <Form>
             <Row>
