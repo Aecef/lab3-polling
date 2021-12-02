@@ -40,28 +40,37 @@ const CreatePoll = () => (
             </Row>
         </Form>
 
-        <div id = 'dayTable'></div>
+        <div id = 'dayTable' > dayTable </div>
     </Container>
 
     <h2>{StartTime.toString()}</h2>
     <h2>{EndTime.toString()}</h2>
 
+    <Button variant= "primary" onClick = {() => tables.createTable(6, document )}></Button>
   </Layout>
   
 )
 
 export default CreatePoll
 
-function CreateTable(blocks){ 
-    const BlockSize = (EndTime.getTime() - StartTime.getTime()) / blocks; 
-    const NewTime = StartTime;
-    for(let i =0; i < blocks; i++){
-        NewTime.setTime(NewTime.getTime() + (BlockSize * i));
-        document.getElementById('dayTable').innerHTML += "<h6>{NewTime.toString()}</h6>";
-        
+
+const tables = {
+    createTable: function (blocks, doc){
+        const BlockSize = (Date.parse(EndTime) - Date.parse(StartTime)) / blocks; 
+        console.log(BlockSize);
+        const NewTime = new Date(Date.parse(StartTime));
+        if(doc.getElementById('dayTable') != null){
+            doc.getElementById('dayTable').innerHTML = " ";
+        }
+    
+        console.log(NewTime);
+        console.log(EndTime);
+        for(let i =0; i < blocks; i++){
+            NewTime.setTime(NewTime.getTime() + (BlockSize * i));
+            console.log((doc.getElementById('___gatsby')));
+            if(doc.getElementById('dayTable') != null){
+                doc.getElementById('dayTable').innerHTML += "<h6>" + NewTime.toString() + "</h6>";
+            }
+        }
     }
 }
-
-window.addEventListener('load', (event) => {
-    CreateTable(8);
-});
