@@ -27,11 +27,11 @@ export default class PollDataComponent extends Component {
 
     // Form Events
     onChangeStartDate(e) {
-        this.setState({ startDate: e.target.value })
+        this.setState({ startDate: Date.parse(e.target.value) })
     }
 
     onChangeEndDate(e) {
-        this.setState({ endDate: e.target.value })
+        this.setState({ endDate: Date.parse(e.target.value)  })
     }
 
     onChangeVotesPTS(e) {
@@ -88,11 +88,11 @@ export default class PollDataComponent extends Component {
                 <form>
                     <div className="form-group">
                         <label>Start Date</label>
-                        <input type="datetime-local" className="form-control" value={this.state.startDate} onChange={this.onChangeStartDate} />
+                        <input type="datetime-local" className="form-control"  onChange={this.onChangeStartDate} />
                     </div>
-                    <div className="form-group" value={this.state.endDate} onChange={this.onChangeEndDate}>
+                    <div className="form-group">
                         <label>End Date</label>
-                        <input type="datetime-local" className="form-control" />
+                        <input type="datetime-local" className="form-control"  onChange={this.onChangeEndDate} />
                     </div>
                     <div className="form-group">
                         <label>Blocks</label>
