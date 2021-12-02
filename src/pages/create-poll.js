@@ -2,7 +2,6 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-import 'bootstrap/dist/css/bootstrap.min.css'
 import {Button, InputGroup, FormControl, Container, Row, Col, Form, Input, FormGroup} from 'react-bootstrap'
 import CalendarAdmin from "../components/calendar-admin"
 
@@ -32,6 +31,14 @@ const CreatePoll = () => (
                 <InputGroup className="my-3">
                     <FormControl
                         placeholder="Time Blocks"
+                        id = "timeblocks"
+                    />
+                </InputGroup>
+            </Row>
+            <Row>
+                <InputGroup className="my-3">
+                    <FormControl
+                        placeholder="Max Votes Per Time"
                     />
                 </InputGroup>
             </Row>
@@ -67,7 +74,7 @@ const tables = {
         console.log(EndTime);
         for(let i =0; i < blocks; i++){
             NewTime.setTime(NewTime.getTime() + (BlockSize * i));
-            console.log((doc.getElementById('___gatsby')));
+
             if(doc.getElementById('dayTable') != null){
                 doc.getElementById('dayTable').innerHTML += "<h6>" + NewTime.toString() + "</h6>";
             }
