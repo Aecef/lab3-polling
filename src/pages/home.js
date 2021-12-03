@@ -12,6 +12,8 @@ const IndexPage = ({data,e }) => {
   return (
     <Layout>
       <p>Hi, {name} {token == '123' ? 'Admin' : 'User'}</p>
+      <Link to="/create-poll/">Create A Poll</Link> <br />
+
     </Layout>
   )
   }
