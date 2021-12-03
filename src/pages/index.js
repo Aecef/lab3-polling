@@ -14,7 +14,6 @@ const IndexPage = () => {
 
   const login = () => {
     
-    if (isBrowser){
     let userInfoData = JSON.parse(window.localStorage.getItem('UserInfo'))
     const userInfo = userInfoData.userInfo.filter(res => {
       return res.UserName == UserName
@@ -62,6 +61,6 @@ const IndexPage = () => {
 
 </Layout>
   }
-}
+
 
 export default IndexPage
