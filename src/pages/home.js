@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Layout from "../components/layout"
+
+
 const isBrowser = typeof window !== "undefined"
 const IndexPage = ({data,e }) => {
-  if(isBrowser){let MyInfo = JSON.parse(window.localStorage.getItem('MyInfo'))}
+  if(isBrowser){let MyInfo = JSON.parse(window.localStorage.getItem('MyInfo'))
   let name = MyInfo ? MyInfo[0].UserName : ''
   let token = MyInfo ? MyInfo[0].Token : ''
 
@@ -12,6 +14,7 @@ const IndexPage = ({data,e }) => {
       <p>Hi, {name} {token == '123' ? 'Admin' : 'User'}</p>
     </Layout>
   )
+  }
 }
 
 export default IndexPage

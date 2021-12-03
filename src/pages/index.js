@@ -29,7 +29,7 @@ const IndexPage = () => {
     } else {
       setError('error')
     }
-  }
+  
   }
 
   return <Layout>
@@ -62,6 +62,7 @@ const IndexPage = () => {
   <Link to="/create-poll/">Create A Poll</Link> <br />
 
 </Layout>
+  }
 }
 
 export default IndexPage

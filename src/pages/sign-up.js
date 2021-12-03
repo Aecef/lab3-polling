@@ -35,7 +35,7 @@ const IndexPage = () => {
       window.localStorage.setItem('UserInfo',JSON.stringify(obj))
     }
     navigate('/')
-  }
+  
 }
 
 
@@ -84,6 +84,7 @@ const IndexPage = () => {
     <p className="foot">Existing account? <Link to="/">Sign in</Link>.</p>
   </form>
 </Layout>
+  }
 }
 
 export default IndexPage
