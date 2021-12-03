@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import PollFormEnd from '../components/forms/poll-form-end';
-
+const isBrowser = typeof window !== "undefined"
 
 import PollDataComponent from '../components/forms/poll-data-component';
 import {Container,Table} from 'react-bootstrap'
@@ -46,7 +46,7 @@ export default CreatePoll
 
 
 function saveData(){
- 
+    if(isBrowser){
     let data = JSON.parse(window.localStorage.getItem('pollData'));
     let dataSlot;
     let iblocks = data.blocks
@@ -73,11 +73,11 @@ function saveData(){
             }
         }
     }
+}
 
 const tables = {
         createTable: function (){
- 
-        let data = JSON.parse(window.localStorage.getItem('pollData'));
+        if(isBrowser){let data = JSON.parse(window.localStorage.getItem('pollData'));}
         let dataSlot;
         let iblocks = data.blocks
 
