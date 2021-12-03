@@ -81,11 +81,18 @@ const tables = {
         if(isBrowser){let data = JSON.parse(window.localStorage.getItem('pollData'));
         let dataSlot;
         let iblocks = data.blocks
+        if(iblocks == 0){
+            iblocks = 1;
+        }
 
         const EndTime = new Date();
         EndTime.setTime(data.endDate)
         const StartTime = new Date(data.startDate);
-        const BlockSize = (Date.parse(EndTime) - Date.parse(StartTime)) / iblocks; 
+        var tLength = Date.parse(EndTime) - Date.parse(StartTime);
+        if ( Date.parse(EndTime) < Date.parse(StartTime)){
+            tLength = 0;
+        }
+        const BlockSize = tLength / iblocks; 
 
         const NewTime = new Date(data.startDate);
 

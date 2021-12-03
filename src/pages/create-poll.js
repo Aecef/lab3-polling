@@ -32,6 +32,9 @@ export default CreatePoll
 
 /*const tables = {
     createTable: function (blocks, doc){
+        if(blocks == 0){
+            blocks = 1;
+        }
         const BlockSize = (Date.parse(EndTime) - Date.parse(StartTime)) / blocks; 
         console.log(BlockSize);
         const NewTime = new Date(Date.parse(StartTime));
