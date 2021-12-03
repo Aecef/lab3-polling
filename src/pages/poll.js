@@ -77,7 +77,7 @@ function saveData(){
 
 const tables = {
         createTable: function (){
-        if(isBrowser){let data = JSON.parse(window.localStorage.getItem('pollData'));}
+        if(isBrowser){let data = JSON.parse(window.localStorage.getItem('pollData'));
         let dataSlot;
         let iblocks = data.blocks
 
@@ -111,4 +111,5 @@ const tables = {
             console.log(document.getElementById('dayTable'));
         }
     }
+}
 }
