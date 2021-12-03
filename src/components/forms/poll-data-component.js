@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button, InputGroup, FormControl, Container, Row, Col, Form, Input, FormGroup} from 'react-bootstrap'
+import { Link } from "gatsby"
 
 export default class PollDataComponent extends Component {
     userData;
@@ -45,6 +45,8 @@ export default class PollDataComponent extends Component {
 
 
     onSubmit(e) {
+        console.log("crap");
+
         e.preventDefault()
 
         this.setState({
@@ -84,6 +86,7 @@ export default class PollDataComponent extends Component {
     render() {
         return (
             <div className="container">
+                <Link to="/poll/">Create A Poll</Link>
                 <form>
                     <div className="form-group">
                         <label>Start Date</label>
@@ -105,7 +108,7 @@ export default class PollDataComponent extends Component {
                         <label>Votes Per Person</label>
                         <input type="text" className="form-control" value={this.state.votespps} onChange={this.onChangeVotesPPS} />
                     </div>
-                    <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                    <button type="submit" className="btn btn-primary btn-block" >Submit</button>
                 </form>
             </div>
         )
