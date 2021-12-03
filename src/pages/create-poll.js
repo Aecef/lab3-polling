@@ -18,8 +18,8 @@ const CreatePoll = () => (
         <Form>
             <Row>
                 <Col xs={4} md={4}>
-                    <Row> Start Time </Row>
-                    <Row> End Time </Row>
+                    <Row> Start Time: </Row>
+                    <Row> End Time: </Row>
                 </Col>
                 <Col className = "p-0" xs={4} md={4}>
                     <Row> <input type="datetime-local" id="startDate" name="startDate" /> </Row>
@@ -27,6 +27,7 @@ const CreatePoll = () => (
                 </Col>
                 <Col xs={4} md={4}></Col>
             </Row>
+            <Row></Row>
             <Row>
                 <InputGroup className="my-3">
                     <FormControl
@@ -43,6 +44,7 @@ const CreatePoll = () => (
                 </InputGroup>
             </Row>
             <Row>
+                <br/>
                 <Button type = "submit">Create Poll</Button>
             </Row>
         </Form>
@@ -63,7 +65,17 @@ export default CreatePoll
 
 const tables = {
     createTable: function (blocks, doc){
-        const BlockSize = (Date.parse(EndTime) - Date.parse(StartTime)) / blocks; 
+
+        const tLength = Date.parse(EndTime) - Date.parse(StartTime);
+        
+        if( Date.parse(EndTime) < Date.parse(StartTime)){
+            tLength = 0;
+        }
+        if(blocks ==  0){
+            blocks = 1;
+        }
+        const BlockSize = tLength / blocks; 
+        
         console.log(BlockSize);
         const NewTime = new Date(Date.parse(StartTime));
         if(doc.getElementById('dayTable') != null){
@@ -72,6 +84,8 @@ const tables = {
     
         console.log(NewTime);
         console.log(EndTime);
+
+
         for(let i =0; i < blocks; i++){
             NewTime.setTime(NewTime.getTime() + (BlockSize * i));
 
