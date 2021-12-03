@@ -30,7 +30,7 @@ const CreatePoll = () => (
 export default CreatePoll
 
 
-const tables = {
+/*const tables = {
     createTable: function (blocks, doc){
         const BlockSize = (Date.parse(EndTime) - Date.parse(StartTime)) / blocks; 
         console.log(BlockSize);
@@ -49,4 +49,4 @@ const tables = {
             }
         }
     }
-}
+}*/
