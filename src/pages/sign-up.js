@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 const isBrowser = typeof window !== "undefined"
 const IndexPage = () => {
+  if(isBrowser){
 
   const [UserName,setUserName] = useState('')
   const [Password,setPassword] = useState('')
@@ -16,7 +17,6 @@ const IndexPage = () => {
     const obj = {
       userInfo: []
     }
-    if(isBrowser){
     let userInfoData = JSON.parse(window.localStorage.getItem('UserInfo'))
     userInfoData ? userInfoData.userInfo.push({
       'UserName': UserName,
