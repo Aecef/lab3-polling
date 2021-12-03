@@ -5,7 +5,7 @@ import { navigate } from '@reach/router'
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
+const isBrowser = typeof window !== "undefined"
 const IndexPage = () => {
 
   const [UserName,setUserName] = useState('')
@@ -13,6 +13,8 @@ const IndexPage = () => {
   const [error,setError] = useState()
 
   const login = () => {
+    
+    if (isBrowser){
     let userInfoData = JSON.parse(window.localStorage.getItem('UserInfo'))
     const userInfo = userInfoData.userInfo.filter(res => {
       return res.UserName == UserName
@@ -27,6 +29,7 @@ const IndexPage = () => {
     } else {
       setError('error')
     }
+  }
   }
 
   return <Layout>
