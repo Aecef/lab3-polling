@@ -15,6 +15,7 @@ const  CreatePoll = () => {
     <Container>
         <button onClick={saveData}>Table</button> 
         <button onClick={tables.createTable}>Blocks Made</button>
+        <br/>
         <Table striped bordered hover>
             <thead>
                 <tr>
