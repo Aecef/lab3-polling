@@ -5,6 +5,7 @@ import { navigate } from '@reach/router'
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { render } from "react-dom"
 const isBrowser = typeof window !== "undefined"
 const IndexPage = () => {
   if(isBrowser){
@@ -85,6 +86,8 @@ const IndexPage = () => {
   </form>
 </Layout>
   }
+  else{}
+  return <Layout></Layout>
 }
 
 export default IndexPage

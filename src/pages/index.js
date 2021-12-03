@@ -59,7 +59,6 @@ const IndexPage = () => {
     <p className="foot">No Account? <Link to="/sign-up/">Create Account</Link>.</p>
   </form>
 
-  <Link to="/create-poll/">Create A Poll</Link> <br />
 
 </Layout>
   }
