@@ -8,12 +8,12 @@ import Seo from "../components/seo"
 import { render } from "react-dom"
 const isBrowser = typeof window !== "undefined"
 const IndexPage = () => {
-  if(isBrowser){
 
   const [UserName,setUserName] = useState('')
   const [Password,setPassword] = useState('')
   const [Email,setEmail] = useState('')
   const [Token,setToken] = useState('')
+  if(isBrowser){
   const submit = () => {
     const obj = {
       userInfo: []
@@ -86,8 +86,7 @@ const IndexPage = () => {
   </form>
 </Layout>
   }
-  else{}
-  return <Layout></Layout>
+  
 }
 
 export default IndexPage
