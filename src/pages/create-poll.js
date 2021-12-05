@@ -26,7 +26,7 @@ const CreatePoll = () => (
   </Layout>
   
 )
-
+  
 export default CreatePoll
 
 
