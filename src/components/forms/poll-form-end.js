@@ -19,7 +19,7 @@ export default class PollFormEnd extends Component {
         e.preventDefault()
     }
 
-    
+      
     componentDidMount() {
         this.userData = JSON.parse(localStorage.getItem('slot' + this.props.dayinmil));
 
