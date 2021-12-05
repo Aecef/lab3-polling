@@ -113,4 +113,4 @@ export default class PollDataComponent extends Component {
             </div>
         )
     }
-}
+} 
